@@ -18,7 +18,9 @@ for i in range(10000):
         numRolls += 1
     A[i] = numRolls
 
-plt.hist(A, bins = 50)
+print(A)
+
+plt.hist(A, bins = 50, normed = True)
 plt.title("Histogram of Rolls Until Seven")
 plt.xlabel("Number of Rolls Until A Seven is Rolled")
 plt.ylabel("Frequency")

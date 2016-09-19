@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 
-rounds = 30000
+rounds = 5000
 complete = False
 collection = np.zeros(5)
 capsCollected = 0
@@ -29,5 +29,5 @@ plt.xlabel("Round")
 plt.ylabel("Caps")
 plt.axis([1,rounds,1, 20])
 
-plt.annotate("P = " +  str(AvgCapsUntilComplete[rounds -1]), xy = (rounds - 8200, AvgCapsUntilComplete[rounds - 1] -2 ))
+plt.annotate("P = " +  str(AvgCapsUntilComplete[rounds -1]), xy = (rounds - 2000, AvgCapsUntilComplete[rounds - 1] -2 ))
 plt.show()

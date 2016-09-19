@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 
-rounds = 10000
+rounds = 5000
 avg = np.zeros(rounds)
 inSemi = 0
 

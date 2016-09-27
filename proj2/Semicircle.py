@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import math
 import numpy as np
 
-rounds = 80000
+rounds = 5000
 avg = np.zeros(rounds)
 inSemi = 0
 
@@ -28,7 +28,7 @@ plt.plot(avg)
 plt.title("Average Number of Occurrences of points on a Semicircle");
 plt.xlabel("Round")
 plt.ylabel("Caps")
-plt.annotate("P = " +  str(avg[rounds -1]), xy = (rounds - 5000, avg[rounds - 1] - .2))
+plt.annotate("P = " +  str(avg[rounds -1]), xy = (rounds - 2000, avg[rounds - 1] - .2))
 plt.show()
 print("p = ")
 print(avg[rounds - 1])

@@ -1,20 +1,27 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import math
+import numpy as np
 
-rounds = 5000
+rounds = 80000
 avg = np.zeros(rounds)
 inSemi = 0
 
-
+p = np.zeros(3)
 for i in range(1, rounds):
-    p1 = np.random.random() * math.pi * 2
-    p2 = np.random.random() * math.pi * 2
-    p3 = np.random.random() * math.pi * 2
-    
-    if(abs(p1 - p2) < math.pi and abs (p1 - p3) < math.pi and abs(p2 - p3) < math.pi):
+    for j in range(3):
+        p[j] = np.random.random() * 2 * 180
+
+    p = np.sort(p)     
+    if(p[1] - p[0] == 180):
         inSemi = inSemi + 1
-   
+    else:
+        if(p[1] - p[0] <= 180):
+            delta1 = p[1] -p[0]
+            if(p[0] - p[2] + 360 + delta1 <= 180 or p[2]- p[1] + delta1 <= 180):
+                inSemi = inSemi + 1
+        else:
+            inSemi = inSemi + 1
     avg[i] = inSemi / i
 
 plt.plot(avg)
@@ -23,3 +30,5 @@ plt.xlabel("Round")
 plt.ylabel("Caps")
 plt.annotate("P = " +  str(avg[rounds -1]), xy = (rounds - 5000, avg[rounds - 1] - .2))
 plt.show()
+print("p = ")
+print(avg[rounds - 1])

@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 gravity = 9.8
-rounds = 50000
+rounds = 80000
 velocity = np.sqrt(980)
 f = np.zeros(rounds)
 p = np.zeros(rounds)

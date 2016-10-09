@@ -1,12 +1,12 @@
 import numpy as np 
 import matplotlib.pyplot as plt
 
-rounds = 10000
+rounds = 50000
 R = 5
 P = np.zeros(rounds)
 
 for i in range(rounds):
-	I = (np.random.randn() *  6)/1000
+	I = (np.random.randn() * 3 * .002)
 	P[i] = I * I * R
 
 mean = np.mean(P)

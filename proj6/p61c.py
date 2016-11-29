@@ -18,4 +18,18 @@ for i in range(trials):
 		numGoodDays = numGoodDays + 1
 
 percentGoodDays = numGoodDays / trials
-print(" By simulation, the \%  of good days over the long run = " + str(percentGoodDays)) 
+print(" By simulation, the \%  of good days over the long run = " + str(percentGoodDays))
+
+P10000 = np.copy(P)
+for i in range(9999):
+	P10000 = np.dot(P10000, P)
+
+p = np.array([0,0,1])
+
+A = np.dot(p,P10000)
+
+ans = float(A[0])
+
+
+print(" By math, the \%  of good days over the long run = " + str(ans))
+

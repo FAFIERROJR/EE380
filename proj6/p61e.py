@@ -22,4 +22,32 @@ for i in range(trials):
 		state = 2
 
 mean = np.mean(daysElapsedA)
-print(" By simulation, the expected number days until a good day = " + str(mean)) 
+print(" By simulation, the expected number days until it gets better = " + str(mean))
+P0 = np.array([[0, .3 , .2], [0, .6, .2], [0, .2, .5]])
+
+I = np.identity(3)
+
+diff = np.subtract(I,P0)
+
+inverse = np.linalg.inv(diff)
+
+M = [[1],[1],[1]]
+
+m0 = np.dot(inverse,M)
+
+P1 = np.array([[.5, 0 , .2], [.2, 0, .2], [.3, 0, .5]])
+
+I = np.identity(3)
+
+diff = np.subtract(I,P1)
+
+inverse = np.linalg.inv(diff)
+
+M = [[1],[1],[1]]
+
+m1= np.dot(inverse,M)
+
+
+mathmean = float(1/(1/m0[2] + 1/m1[2]))
+
+print(" By math, the expected number days until it gets better= " + str(mathmean)) 
